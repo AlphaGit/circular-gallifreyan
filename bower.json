@@ -1,0 +1,14 @@
+{
+  "name": "circular-gallifreyan",
+  "version": "0.0.0",
+  "authors": [
+    "Alpha <alphagma@gmail.com>"
+  ],
+  "description": "Circular gallifreyan writer",
+  "main": "js/main.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "http://circular-gallifreyan.alphasmanifesto.com/"
+}

@@ -1,2 +1,3 @@
 # deployment script for continuous deployment
 deploy_*.php
+bower_components/
