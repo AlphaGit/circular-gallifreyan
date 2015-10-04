@@ -15,7 +15,8 @@
 
   <script type="text/javascript">
     require.config({
-      baseUrl: 'js'
+      baseUrl: 'js',
+      urlArgs: 'timestamp=' + Date.now() // we don't want any caching here
     });
   </script>
 
