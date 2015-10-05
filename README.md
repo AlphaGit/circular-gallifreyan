@@ -13,4 +13,6 @@ Sources:
 
 Using:
 
-- [HTML5 Boilerplate 4.2.0](http://html5boilerplate.com/)
+- [HTML5 Boilerplate](http://html5boilerplate.com/)
+- [Jasmine](http://jasmine.github.io/)
+- [RequireJS](http://requirejs.org/)
