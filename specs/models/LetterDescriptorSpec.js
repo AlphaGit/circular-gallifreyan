@@ -82,10 +82,57 @@ describe('LetterDescriptor', function() {
 
     for (var index in letterExpectations) {
       var le = letterExpectations[index];
-      it('identifies ' + le.letter  +'\'s baseline position as ' + le.baseLinePositionIdentifier, function() {
-        var letter = new LetterDescriptor(le.letter);
-        expect(letter.baselinePosition).toBe(LetterDescriptor.BASELINE_POSITIONS[le.baseLinePositionIdentifier]);
-      });
+      (function(letterName, baseLinePositionIdentifier) {
+        it('identifies ' + letterName  +'\'s baseline position as ' + baseLinePositionIdentifier, function() {
+          var letter = new LetterDescriptor(letterName);
+          expect(letter.baselinePosition).toBe(LetterDescriptor.BASELINE_POSITIONS[baseLinePositionIdentifier]);
+        });
+      })(le.letter, le.baseLinePositionIdentifier);
     }
-  });
+  }); // letter baseline positions
+
+  describe('letter shapes', function() {
+    var letterExpectations = [
+      { letter: 'a', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: 'b', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'ch', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'd', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'e', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: 'f', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'g', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'h', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'i', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: 'j', shapeIdentifier: 'CIRCLE' },
+      { letter: 'k', shapeIdentifier: 'CIRCLE' },
+      { letter: 'l', shapeIdentifier: 'CIRCLE' },
+      { letter: 'm', shapeIdentifier: 'CIRCLE' },
+      { letter: 'n', shapeIdentifier: 'CIRCLE' },
+      { letter: 'o', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: 'p', shapeIdentifier: 'CIRCLE' },
+      { letter: 'qu', shapeIdentifier: 'CIRCLE' },
+      { letter: 'r', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'sh', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 's', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 't', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'u', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: 'v', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'w', shapeIdentifier: 'CONCAVE_ARC' },
+      { letter: 'x', shapeIdentifier: 'CIRCLE' },
+      { letter: 'y', shapeIdentifier: 'CIRCLE' },
+      { letter: 'z', shapeIdentifier: 'CIRCLE' },
+      { letter: 'ng', shapeIdentifier: 'CIRCLE' },
+      { letter: 'th', shapeIdentifier: 'CIRCLE' }
+    ];
+
+    for (var index in letterExpectations) {
+      var le = letterExpectations[index];
+
+      (function(letterName, shapeIdentifier) {
+        it('identifies ' + letterName  +'\'s shape as ' + shapeIdentifier, function() {
+          var letter = new LetterDescriptor(letterName);
+          expect(letter.shape).toBe(LetterDescriptor.SHAPES[shapeIdentifier]);
+        });
+      })(le.letter, le.shapeIdentifier);
+    }
+  }); // letter shapes
 });
