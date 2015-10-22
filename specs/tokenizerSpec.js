@@ -1,4 +1,4 @@
-describe("Tokenizer", function() {
+describe('Tokenizer', function() {
   var tokenizer;
 
   beforeEach(function(done) {

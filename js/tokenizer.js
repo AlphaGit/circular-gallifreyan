@@ -1,4 +1,4 @@
-define('tokenizer', function() {
+define(function() {
   return function(text) {
     return new InternalTokenizer(text)
       .transformToLowercase()

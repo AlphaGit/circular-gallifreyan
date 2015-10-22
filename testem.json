@@ -1,0 +1,15 @@
+{
+  "framework": "jasmine",
+  "src_files": [
+    "bower_components/requirejs/require.js",
+    "bower_components/jasmine-core/lib/jasmine-core/jasmine.js",
+    "bower_components/jasmine-core/lib/jasmine-core/jasmine-html.js",
+    "bower_components/jasmine-core/lib/jasmine-core/boot.js",
+    "js/**/*.js",
+    "specs/**/*.js"
+  ],
+  "test_page": "tests.html",
+  "launch_in_dev": [
+    "Chrome"
+  ]
+}
