@@ -13,8 +13,15 @@ describe('LetterDescriptor', function() {
   });
 
   it('can be instantiated as a class', function() {
-    var newObject = new LetterDescriptor();
+    var newObject = new LetterDescriptor('a');
     expect(newObject).toBeDefined();
+  });
+
+  it('throws an error if a letter is not passed', function() {
+    function noParameterPassed() {
+      new LetterDescriptor();
+    }
+    expect(noParameterPassed).toThrow();
   });
 
   it('stores the letter passed to it', function() {
@@ -47,7 +54,7 @@ describe('LetterDescriptor', function() {
     expect(newObject.decorationCount).toBe(0);
   });
 
-  describe('letter baseline positions', function() {
+  describe('baseline positions', function() {
     var letterExpectations = [
       { letter: 'a', baseLinePositionIdentifier: 'BELOW_BASELINE' },
       { letter: 'b', baseLinePositionIdentifier: 'ON_BASELINE' },
@@ -91,7 +98,7 @@ describe('LetterDescriptor', function() {
     }
   }); // letter baseline positions
 
-  describe('letter shapes', function() {
+  describe('shapes', function() {
     var letterExpectations = [
       { letter: 'a', shapeIdentifier: 'SMALL_CIRCLE' },
       { letter: 'b', shapeIdentifier: 'CONCAVE_ARC' },
@@ -135,4 +142,94 @@ describe('LetterDescriptor', function() {
       })(le.letter, le.shapeIdentifier);
     }
   }); // letter shapes
+
+  describe('decoration types', function() {
+    var letterExpectations = [
+      { letter: 'a', decorationTypeIdentifier: 'NONE' },
+      { letter: 'b', decorationTypeIdentifier: 'NONE' },
+      { letter: 'ch', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'd', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'e', decorationTypeIdentifier: 'NONE' },
+      { letter: 'f', decorationTypeIdentifier: 'LINES' },
+      { letter: 'g', decorationTypeIdentifier: 'LINES' },
+      { letter: 'h', decorationTypeIdentifier: 'LINES' },
+      { letter: 'i', decorationTypeIdentifier: 'LINES' },
+      { letter: 'j', decorationTypeIdentifier: 'NONE' },
+      { letter: 'k', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'l', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'm', decorationTypeIdentifier: 'LINES' },
+      { letter: 'n', decorationTypeIdentifier: 'LINES' },
+      { letter: 'o', decorationTypeIdentifier: 'NONE' },
+      { letter: 'p', decorationTypeIdentifier: 'LINES' },
+      { letter: 'qu', decorationTypeIdentifier: 'LINES' },
+      { letter: 'r', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'sh', decorationTypeIdentifier: 'DOTS' },
+      { letter: 's', decorationTypeIdentifier: 'LINES' },
+      { letter: 't', decorationTypeIdentifier: 'NONE' },
+      { letter: 'u', decorationTypeIdentifier: 'LINES' },
+      { letter: 'v', decorationTypeIdentifier: 'LINES' },
+      { letter: 'w', decorationTypeIdentifier: 'LINES' },
+      { letter: 'x', decorationTypeIdentifier: 'LINES' },
+      { letter: 'y', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'z', decorationTypeIdentifier: 'DOTS' },
+      { letter: 'ng', decorationTypeIdentifier: 'LINES' },
+      { letter: 'th', decorationTypeIdentifier: 'NONE' }
+    ];
+
+    for (var index in letterExpectations) {
+      var le = letterExpectations[index];
+
+      (function(letterName, decorationTypeIdentifier) {
+        it('identifies ' + letterName  +'\'s decoration type as ' + decorationTypeIdentifier, function() {
+          var letter = new LetterDescriptor(letterName);
+          expect(letter.decorationType).toBe(LetterDescriptor.DECORATION_TYPES[decorationTypeIdentifier]);
+        });
+      })(le.letter, le.decorationTypeIdentifier);
+    }
+  }); // letter decoration types
+
+  describe('decoration count', function() {
+    var letterExpectations = [
+      { letter: 'a', count: 0 },
+      { letter: 'b', count: 0 },
+      { letter: 'ch', count: 2 },
+      { letter: 'd', count: 2 },
+      { letter: 'e', count: 0 },
+      { letter: 'f', count: 3 },
+      { letter: 'g', count: 1 },
+      { letter: 'h', count: 2 },
+      { letter: 'i', count: 1 },
+      { letter: 'j', count: 0 },
+      { letter: 'k', count: 2 },
+      { letter: 'l', count: 3 },
+      { letter: 'm', count: 3 },
+      { letter: 'n', count: 1 },
+      { letter: 'o', count: 0 },
+      { letter: 'p', count: 2 },
+      { letter: 'qu', count: 1 },
+      { letter: 'r', count: 3 },
+      { letter: 'sh', count: 2 },
+      { letter: 's', count: 3 },
+      { letter: 't', count: 0 },
+      { letter: 'u', count: 1 },
+      { letter: 'v', count: 1 },
+      { letter: 'w', count: 2 },
+      { letter: 'x', count: 2 },
+      { letter: 'y', count: 2 },
+      { letter: 'z', count: 3 },
+      { letter: 'ng', count: 3 },
+      { letter: 'th', count: 0 }
+    ];
+
+    for (var index in letterExpectations) {
+      var le = letterExpectations[index];
+
+      (function(letterName, decorationCount) {
+        it('identifies ' + letterName  + ' having ' + decorationCount + ' decorations', function() {
+          var letter = new LetterDescriptor(letterName);
+          expect(letter.decorationCount).toBe(decorationCount);
+        });
+      })(le.letter, le.count);
+    }
+  }); // letter decoration count
 });
