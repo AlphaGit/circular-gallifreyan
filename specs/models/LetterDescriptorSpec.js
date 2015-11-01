@@ -84,7 +84,24 @@ describe('LetterDescriptor', function() {
       { letter: 'y', baseLinePositionIdentifier: 'ON_BASELINE' },
       { letter: 'z', baseLinePositionIdentifier: 'ON_BASELINE' },
       { letter: 'ng', baseLinePositionIdentifier: 'ON_BASELINE' },
-      { letter: 'th', baseLinePositionIdentifier: 'ON_BASELINE' }
+      { letter: 'th', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '.', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '?', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '!', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '"', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '\'', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '-', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: ',', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '0', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '1', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '2', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '3', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '4', baseLinePositionIdentifier: 'ON_BASELINE' },
+      { letter: '5', baseLinePositionIdentifier: 'ABOVE_BASELINE' },
+      { letter: '6', baseLinePositionIdentifier: 'ABOVE_BASELINE' },
+      { letter: '7', baseLinePositionIdentifier: 'ABOVE_BASELINE' },
+      { letter: '8', baseLinePositionIdentifier: 'BELOW_BASELINE' },
+      { letter: '9', baseLinePositionIdentifier: 'BELOW_BASELINE' }
     ];
 
     for (var index in letterExpectations) {
@@ -128,7 +145,24 @@ describe('LetterDescriptor', function() {
       { letter: 'y', shapeIdentifier: 'CIRCLE' },
       { letter: 'z', shapeIdentifier: 'CIRCLE' },
       { letter: 'ng', shapeIdentifier: 'CIRCLE' },
-      { letter: 'th', shapeIdentifier: 'CIRCLE' }
+      { letter: 'th', shapeIdentifier: 'CIRCLE' },
+      { letter: '.', shapeIdentifier: 'SMALL_CIRCLE' },
+      { letter: '?', shapeIdentifier: 'NONE' },
+      { letter: '!', shapeIdentifier: 'NONE' },
+      { letter: '"', shapeIdentifier: 'NONE' },
+      { letter: '\'', shapeIdentifier: 'NONE' },
+      { letter: '-', shapeIdentifier: 'NONE' },
+      { letter: ',', shapeIdentifier: 'FILLED_SMALL_CIRCLE' },
+      { letter: '0', shapeIdentifier: 'NONE' },
+      { letter: '1', shapeIdentifier: 'NONE' },
+      { letter: '2', shapeIdentifier: 'CIRCLE' },
+      { letter: '3', shapeIdentifier: 'CIRCLE' },
+      { letter: '4', shapeIdentifier: 'CIRCLE' },
+      { letter: '5', shapeIdentifier: 'CIRCLE' },
+      { letter: '6', shapeIdentifier: 'CIRCLE' },
+      { letter: '7', shapeIdentifier: 'CIRCLE' },
+      { letter: '8', shapeIdentifier: 'CIRCLE' },
+      { letter: '9', shapeIdentifier: 'CIRCLE' }
     ];
 
     for (var index in letterExpectations) {
@@ -173,7 +207,24 @@ describe('LetterDescriptor', function() {
       { letter: 'y', decorationTypeIdentifier: 'DOTS' },
       { letter: 'z', decorationTypeIdentifier: 'DOTS' },
       { letter: 'ng', decorationTypeIdentifier: 'LINES' },
-      { letter: 'th', decorationTypeIdentifier: 'NONE' }
+      { letter: 'th', decorationTypeIdentifier: 'NONE' },
+      { letter: '.', decorationTypeIdentifier: 'NONE' },
+      { letter: '?', decorationTypeIdentifier: 'DOTS' },
+      { letter: '!', decorationTypeIdentifier: 'DOTS' },
+      { letter: '"', decorationTypeIdentifier: 'LINES' },
+      { letter: '\'', decorationTypeIdentifier: 'LINES' },
+      { letter: '-', decorationTypeIdentifier: 'LINES' },
+      { letter: ',', decorationTypeIdentifier: 'NONE' },
+      { letter: '0', decorationTypeIdentifier: 'LINES' },
+      { letter: '1', decorationTypeIdentifier: 'LINES' },
+      { letter: '2', decorationTypeIdentifier: 'NONE' },
+      { letter: '3', decorationTypeIdentifier: 'INNER_CIRCLES' },
+      { letter: '4', decorationTypeIdentifier: 'INNER_CIRCLES' },
+      { letter: '5', decorationTypeIdentifier: 'NONE' },
+      { letter: '6', decorationTypeIdentifier: 'INNER_CIRCLES' },
+      { letter: '7', decorationTypeIdentifier: 'INNER_CIRCLES' },
+      { letter: '8', decorationTypeIdentifier: 'NONE' },
+      { letter: '9', decorationTypeIdentifier: 'INNER_CIRCLES' }
     ];
 
     for (var index in letterExpectations) {
@@ -218,7 +269,24 @@ describe('LetterDescriptor', function() {
       { letter: 'y', count: 2 },
       { letter: 'z', count: 3 },
       { letter: 'ng', count: 3 },
-      { letter: 'th', count: 0 }
+      { letter: 'th', count: 0 },
+      { letter: '.', count: 0 },
+      { letter: '?', count: 2 },
+      { letter: '!', count: 3 },
+      { letter: '"', count: 1 },
+      { letter: '\'', count: 2 },
+      { letter: '-', count: 3 },
+      { letter: ',', count: 0 },
+      { letter: '0', count: 1 },
+      { letter: '1', count: 1 },
+      { letter: '2', count: 0 },
+      { letter: '3', count: 1 },
+      { letter: '4', count: 2 },
+      { letter: '5', count: 0 },
+      { letter: '6', count: 1 },
+      { letter: '7', count: 2 },
+      { letter: '8', count: 0 },
+      { letter: '9', count: 1 }
     ];
 
     for (var index in letterExpectations) {

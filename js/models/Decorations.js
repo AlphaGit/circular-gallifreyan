@@ -2,7 +2,8 @@ define(function() {
   var DECORATION_TYPES = {
     NONE: 'NONE',
     DOTS: 'DOTS',
-    LINES: 'LINES'
+    LINES: 'LINES',
+    INNER_CIRCLES: 'INNER_CIRCLES'
   };
 
   var _decorations = {
@@ -34,7 +35,24 @@ define(function() {
     y: { type: DECORATION_TYPES.DOTS, count: 2 },
     z: { type: DECORATION_TYPES.DOTS, count: 3 },
     ng: { type: DECORATION_TYPES.LINES, count: 3 },
-    th: { type: DECORATION_TYPES.NONE, count: 0 }
+    th: { type: DECORATION_TYPES.NONE, count: 0 },
+    '.': { type: DECORATION_TYPES.NONE, count: 0 },
+    '?': { type: DECORATION_TYPES.DOTS, count: 2 },
+    '!': { type: DECORATION_TYPES.DOTS, count: 3 },
+    '"': { type: DECORATION_TYPES.LINES, count: 1 },
+    '\'': { type: DECORATION_TYPES.LINES, count: 2 },
+    '-': { type: DECORATION_TYPES.LINES, count: 3 },
+    ',': { type: DECORATION_TYPES.NONE, count: 0 },
+    '0': { type: DECORATION_TYPES.LINES, count: 1 },
+    '1': { type: DECORATION_TYPES.LINES, count: 1 },
+    '2': { type: DECORATION_TYPES.NONE, count: 0 },
+    '3': { type: DECORATION_TYPES.INNER_CIRCLES, count: 1 },
+    '4': { type: DECORATION_TYPES.INNER_CIRCLES, count: 2 },
+    '5': { type: DECORATION_TYPES.NONE, count: 0 },
+    '6': { type: DECORATION_TYPES.INNER_CIRCLES, count: 1 },
+    '7': { type: DECORATION_TYPES.INNER_CIRCLES, count: 2 },
+    '8': { type: DECORATION_TYPES.NONE, count: 0 },
+    '9': { type: DECORATION_TYPES.INNER_CIRCLES, count: 1 }
   };
 
   function getDecorationType(letter) {

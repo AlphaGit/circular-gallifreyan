@@ -2,7 +2,9 @@ define(function() {
   var SHAPES = {
     SMALL_CIRCLE: 'SMALL_CIRCLE',
     CIRCLE: 'CONCAVE_ARC',
-    CONCAVE_ARC: 'CONCAVE_ARC'
+    CONCAVE_ARC: 'CONCAVE_ARC',
+    FILLED_SMALL_CIRCLE: 'FILLED_SMALL_CIRCLE',
+    NONE: 'NONE'
   };
 
   var _letterShapes = {
@@ -34,7 +36,24 @@ define(function() {
     y: SHAPES.CIRCLE,
     z: SHAPES.CIRCLE,
     ng: SHAPES.CIRCLE,
-    th: SHAPES.CIRCLE
+    th: SHAPES.CIRCLE,
+    '.': SHAPES.SMALL_CIRCLE,
+    '?': SHAPES.NONE,
+    '!': SHAPES.NONE,
+    '"': SHAPES.NONE,
+    '\'': SHAPES.NONE,
+    '-': SHAPES.NONE,
+    ',': SHAPES.FILLED_SMALL_CIRCLE,
+    '0': SHAPES.NONE,
+    '1': SHAPES.NONE,
+    '2': SHAPES.CIRCLE,
+    '3': SHAPES.CIRCLE,
+    '4': SHAPES.CIRCLE,
+    '5': SHAPES.CIRCLE,
+    '6': SHAPES.CIRCLE,
+    '7': SHAPES.CIRCLE,
+    '8': SHAPES.CIRCLE,
+    '9': SHAPES.CIRCLE
   };
 
   function getShape(letter) {
