@@ -9,7 +9,7 @@ describe('Tokenizer', function() {
   });
 
   it('returns a function', function() {
-    expect(typeof tokenizer === 'function').toBe(true);
+    expect(typeof tokenizer).toBe('function');
   });
 
   it('returns an array of words and letters in them', function() {

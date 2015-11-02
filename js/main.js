@@ -1,5 +1,7 @@
-define(['tokenizer'], function(tokenizer) {
+define(['models/DrawingSpecification'], function(DrawingSpecification) {
   var $text = $('#userText');
+  var $debugInfo = $('#debugInfo');
+
   $('#doTranslate').click(redraw);
   var $translatedBox = $('#translated');
   var paper = Raphael('translated', $translatedBox.width(), $translatedBox.height());
@@ -8,18 +10,11 @@ define(['tokenizer'], function(tokenizer) {
     paper.clear();
 
     var textToDraw = $text.val();
-    var drawSpecification = getDrawingSpecification(textToDraw);
+    var drawSpecification = DrawingSpecification.parse(textToDraw);
+    $debugInfo.text(JSON.stringify(drawSpecification));
 
-    var circle = paper.circle(pos.x, pos.y, 10);
+    var circle = paper.circle(20, 20, 10);
     circle.attr('fill', '#fff');
     circle.attr('stroke', '#000');
-  }
-
-  function drawSpecification(text) {
-    var tokens = tokenizer(text);
-  }
-
-  function tokenizeText(text) {
-
   }
 });
