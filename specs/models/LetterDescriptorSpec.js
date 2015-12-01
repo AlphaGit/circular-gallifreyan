@@ -89,7 +89,7 @@ describe('LetterDescriptor', function() {
       { letter: '?', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
       { letter: '!', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
       { letter: '"', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
-      { letter: '\'', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
+      { letter: '\'', baseLinePositionIdentifier: 'ON_BASELINE' },
       { letter: '-', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
       { letter: ',', baseLinePositionIdentifier: 'SENTENCE_CIRCLE' },
       { letter: '0', baseLinePositionIdentifier: 'ON_BASELINE' },
