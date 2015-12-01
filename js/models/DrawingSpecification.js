@@ -1,10 +1,17 @@
-define(['tokenizer'], function(tokenizer) {
+define(['tokenizer', 'visualGrammarParser'], function(tokenizer, visualGrammarParser) {
   var DrawingSpecification = function DrawingSpecification() {
   };
 
+  function getVisualRepresentation(tokens) {
+    return visualGrammarParser(tokens);
+  }
+
   DrawingSpecification.parse = function parse(textToParse) {
-    // 'word1 word2. word3.' => [sentence1, sentence2]
+    // 'w1.w2.' => [w, 1, ., w, 2, .]
     var tokens = tokenizer(textToParse);
+
+    var visualRepresentation = getVisualRepresentation(tokens);
+
     return tokens;
   };
 
