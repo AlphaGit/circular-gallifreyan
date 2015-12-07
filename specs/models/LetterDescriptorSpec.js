@@ -24,6 +24,13 @@ describe('LetterDescriptor', function() {
     expect(noParameterPassed).toThrow();
   });
 
+  it('throws an error if it receives an invalid letter of the gallifreyan alphabet', function() {
+    function invalidLetterPassed() {
+      new LetterDescriptor('c');
+    }
+    expect(invalidLetterPassed).toThrow();
+  });
+
   it('stores the letter passed to it', function() {
     var newObject = new LetterDescriptor('a');
     expect(newObject.letter).toBe('a');
@@ -300,4 +307,66 @@ describe('LetterDescriptor', function() {
       })(le.letter, le.count);
     }
   }); // letter decoration count
+
+  describe('#isPunctuation', function() {
+    var punctuationExpectation = [
+      { letter: 'a', expectedResult: false },
+      { letter: 'b', expectedResult: false },
+      { letter: 'ch', expectedResult: false },
+      { letter: 'd', expectedResult: false },
+      { letter: 'e', expectedResult: false },
+      { letter: 'f', expectedResult: false },
+      { letter: 'g', expectedResult: false },
+      { letter: 'h', expectedResult: false },
+      { letter: 'i', expectedResult: false },
+      { letter: 'j', expectedResult: false },
+      { letter: 'k', expectedResult: false },
+      { letter: 'l', expectedResult: false },
+      { letter: 'm', expectedResult: false },
+      { letter: 'n', expectedResult: false },
+      { letter: 'o', expectedResult: false },
+      { letter: 'p', expectedResult: false },
+      { letter: 'qu', expectedResult: false },
+      { letter: 'r', expectedResult: false },
+      { letter: 'sh', expectedResult: false },
+      { letter: 's', expectedResult: false },
+      { letter: 't', expectedResult: false },
+      { letter: 'u', expectedResult: false },
+      { letter: 'v', expectedResult: false },
+      { letter: 'w', expectedResult: false },
+      { letter: 'x', expectedResult: false },
+      { letter: 'y', expectedResult: false },
+      { letter: 'z', expectedResult: false },
+      { letter: 'ng', expectedResult: false },
+      { letter: 'th', expectedResult: false },
+      { letter: '.', expectedResult: true },
+      { letter: '?', expectedResult: true },
+      { letter: '!', expectedResult: true },
+      { letter: '"', expectedResult: true },
+      { letter: '\'', expectedResult: true },
+      { letter: '-', expectedResult: true },
+      { letter: ',', expectedResult: true },
+      { letter: '0', expectedResult: false },
+      { letter: '1', expectedResult: false },
+      { letter: '2', expectedResult: false },
+      { letter: '3', expectedResult: false },
+      { letter: '4', expectedResult: false },
+      { letter: '5', expectedResult: false },
+      { letter: '6', expectedResult: false },
+      { letter: '7', expectedResult: false },
+      { letter: '8', expectedResult: false },
+      { letter: '9', expectedResult: false }
+    ];
+
+    for (var index in punctuationExpectation) {
+      var pe = punctuationExpectation[index];
+
+      (function(letterName, expectedResult) {
+        it('identifies ' + letterName  + ' as ' + (expectedResult ? '' : 'not ') + ' being punctuation', function() {
+          var letter = new LetterDescriptor(letterName);
+          expect(letter.isPunctuation).toBe(expectedResult);
+        });
+      })(pe.letter, pe.expectedResult);
+    }
+  }); // #isPunctuation
 });

@@ -59,8 +59,13 @@ define(function() {
     return _letterBaselinePositions[letter];
   };
 
+  function isPresent(letter) {
+    return _letterBaselinePositions.hasOwnProperty(letter);
+  }
+
   return {
     BASELINE_POSITIONS: BASELINE_POSITIONS,
-    getBaselinePosition: getBaselinePosition
+    getBaselinePosition: getBaselinePosition,
+    isPresent: isPresent
   };
 });

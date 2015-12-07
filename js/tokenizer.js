@@ -4,7 +4,6 @@ define(function() {
       .transformToLowercase()
       .removeUnsupportedPunctuation()
       .replaceSoftCs()
-      .separateInWords()
       .separateInLetters()
       .getResult();
   };
@@ -18,7 +17,7 @@ define(function() {
     }
 
     this.removeUnsupportedPunctuation = function removeUnsupportedPunctuation() {
-      result = result.replace(/[^\w\d\.\?!"'\-,\s]/g, '');
+      result = result.replace(/[^\w\d\.\?!"'\-,]/g, '');
       return this;
     }
 
@@ -27,19 +26,14 @@ define(function() {
       return this;
     };
 
-    this.separateInWords = function separateInWords() {
-      result = result.split(' ');
-      return this;
-    }
-
     this.separateInLetters = function separateInLetters() {
       var LETTER_SEPARATOR = /(ch|sh|th|ng|qu|.)/g;
-      result = result.map(function(word) {
-        var letters = [];
-        while ((match = LETTER_SEPARATOR.exec(word)) !== null)
-          letters.push(match[0]);
-        return letters;
-      });
+
+      var letters = [];
+      while ((match = LETTER_SEPARATOR.exec(result)) !== null)
+        letters.push(match[0]);
+      result = letters;
+
       return this;
     }
 

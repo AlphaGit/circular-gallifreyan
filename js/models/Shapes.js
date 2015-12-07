@@ -60,8 +60,13 @@ define(function() {
     return _letterShapes[letter];
   };
 
+  function isPresent(letter) {
+    return _letterShapes.hasOwnProperty(letter);
+  }
+
   return {
     SHAPES: SHAPES,
-    getShape: getShape
+    getShape: getShape,
+    isPresent: isPresent
   };
 });

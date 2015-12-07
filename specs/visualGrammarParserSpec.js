@@ -7,14 +7,14 @@ describe('VisualGrammarParser', function() {
       visualGrammarParser = vgp;
 
       tokensInputExample = [
-        ['b', 'o', 'w', 't', 'i', 'e', 's'],
-        ['a', 'r', 'e'],
-        ['c', 'o', 'o', 'l', '!'],
-        ['i', 't', '\'', 's'],
-        ['b', 'i', 'g', 'g', 'e', 'r', ','],
-        ['o', 'n'],
-        ['t', 'h', 'e'],
-        ['i', 'n', 's', 'i', 'd', 'e']
+        'b', 'o', 'w', 't', 'i', 'e', 's',
+        'a', 'r', 'e',
+        'k', 'o', 'o', 'l', '!',
+        'i', 't', '\'', 's',
+        'b', 'i', 'g', 'g', 'e', 'r', ',',
+        'o', 'n',
+        't', 'h', 'e',
+        'i', 'n', 's', 'i', 'd', 'e'
       ];
       done();
     });
@@ -24,8 +24,7 @@ describe('VisualGrammarParser', function() {
     expect(typeof visualGrammarParser).toBe('function');
   });
 
-  it('returns a sentence at the top level', function() {
-    //tests for an array
-    expect(visualGrammarParser(tokensInputExample).length).toBeDefined();
+  it('returns sentences at the top level', function() {
+    expect(visualGrammarParser(tokensInputExample).length).toBe(4);
   });
 });

@@ -63,9 +63,14 @@ define(function() {
     return _decorations[letter].count;
   }
 
+  function isPresent(letter) {
+    return _decorations.hasOwnProperty(letter);
+  }
+
   return {
     DECORATION_TYPES: DECORATION_TYPES,
     getDecorationType: getDecorationType,
-    getDecorationCount: getDecorationCount
+    getDecorationCount: getDecorationCount,
+    isPresent: isPresent
   };
 });
